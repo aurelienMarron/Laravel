@@ -28,8 +28,8 @@ Route::get('/product', function(){
 }
 );
 
-Route::get('/product/', function(){
-    return 'Fiche du produit ';
+Route::get('/product/{id?}', function($id){
+    return 'Fiche du produit' . $id;
 }
 );
 
