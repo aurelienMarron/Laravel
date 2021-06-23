@@ -12,7 +12,9 @@ class ProductController extends Controller
 
 
     public function infoProduit($id){
-        return view('infoProduit');
+        $id=request('id');
+        return view('infoProduit',
+        ['id'=>$id]);
     }
 
 }

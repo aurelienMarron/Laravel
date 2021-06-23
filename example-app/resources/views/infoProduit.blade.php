@@ -1,3 +1,3 @@
 <html>
-<p>Fiche du produit <?php echo request('id')?></p>
+<p>Fiche du produit {{$id}}</p>
 </html>
