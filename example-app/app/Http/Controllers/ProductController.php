@@ -11,7 +11,7 @@ class ProductController extends Controller
     }
 
 
-    public function infoProduit($id){
+    public function infoProduit(){
         $id=request('id');
         return view('infoProduit',
         ['id'=>$id]);
