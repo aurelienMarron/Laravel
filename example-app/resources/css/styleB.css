@@ -1,0 +1,114 @@
+/* -------------------- INDEX --------------------- */
+
+.Btitre{
+  padding: 200px 0;
+  background-image: url("../../public/img/objectif.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+
+.Btitre h1 {
+  color: #fff;
+  font-size: 40px;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+}
+
+.Btitre h1 span {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: normal;
+}
+
+.Bpresentation h2 {
+  color: #000;
+  font-size: 30px;
+  margin-bottom: 75px;
+  border-bottom: 1px solid #000;
+}
+
+/* -------------------- CATALOGUE --------------------- */
+
+.Bcatalogue img{
+ width: 130px;
+ height: 110px;
+ margin-bottom: 15px;
+}
+
+/* -------------------- CONTACT --------------------- */
+
+.Bcatalogue{
+  margin-bottom: 100px;
+}
+
+.Bcatalogue .Ben2{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  justify-content: space-between;
+}
+
+.Bcatalogue .container h2{
+  color: #000;
+  font-size: 30px;
+  margin: 100px 0;
+}
+
+.Bcatalogue .Btarifs{
+  width: 45%;
+}
+
+.Bcatalogue .Bgalerie{
+    width: 49%;
+}
+
+.Bcatalogue .Bgalerie .boutons{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.Bcatalogue .Bgalerie .col img{
+ width: 130px;
+ height: 110px;
+ margin-bottom: 15px;
+}
+
+/* ---------------- CONTACT ------------------------ */
+.Bcontact{
+  background-image: url("../../public/img/aurore-bleue.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.Bcontact .container{
+  max-width: 1000px;
+}
+
+.Bcontact h2 {
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.Bcontact h3 {
+  font-size: 15px;
+  color: #fff;
+  text-align: right;
+  border-bottom: 1px solid #fff;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.Bcontact textarea {
+  width: 100%;
+  height: 300px;
+}
+
+.Bcontact select {
+  width: 100%;
+}
