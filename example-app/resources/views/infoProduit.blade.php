@@ -1,3 +1,3 @@
 <html lang="fr">
-<p>Fiche du produit {{$id}}</p>
+<p>Fiche du produit {{$cleproduit}}</p>
 </html>
