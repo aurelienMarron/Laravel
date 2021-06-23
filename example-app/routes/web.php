@@ -17,7 +17,7 @@ use App\Http\Controllers\CartController;
 
 
 Route::get('/', function () {
-    return view('helloworld');
+    return view('welcome');
 });
 
 Route::get('/', [HomeController::class,'homePage']);
@@ -29,3 +29,4 @@ Route::get('/product/{id?}', [ProductController::class,'infoProduit']);
 
 
 Route::get('/cart',[CartController::class,'cart']);
+
