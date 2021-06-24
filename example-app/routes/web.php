@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EquipeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +25,16 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class,'homePage']);
 
 
-Route::get('/product', [ProductController::class,'listeProduit']);
+//Route::get('/product', [ProductController::class,'listeProduit']);
 
-Route::get('/product/{id?}', [ProductController::class,'infoProduit']);
+Route::get('/product/{id}', [ProductController::class,'infoProduit']);
 
 
 Route::get('/cart',[CartController::class,'cart']);
 
+Route::get('/contact', [contactController::class,'afficheContact']);
+
+
+Route::get('/equipe', [EquipeController::class, 'equiPe']);
+
+Route::get('/product', [ProductController::class,'listeProduit']);

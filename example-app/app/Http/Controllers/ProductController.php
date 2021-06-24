@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 class ProductController extends Controller
 {
     public function listeProduit(){
-        return view('listeProduit');
+        return view('product-list');
     }
 
 
