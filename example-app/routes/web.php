@@ -7,6 +7,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EquipeController;
 use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +40,7 @@ Route::get('/contact', [contactController::class,'afficheContact']);
 Route::get('/equipe', [EquipeController::class, 'equiPe']);
 
 Route::get('/product', [ProductController::class,'listeProduit']);
+
+Route::get('/listeProduitParNom', [ProductController::class,'listeProduitParNom']);
+
+Route::get('/listeProduitParPrixCroissant', [ProductController::class,'listeProduitParPrixCroissant']);
