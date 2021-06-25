@@ -22,21 +22,18 @@ class ProductController extends Controller
     }
 
 public function listeProduitParNom(){
-        $products= Product:: orderBy('name')
+        $products= Product::orderBy('name')
         ->get();
         return view('listeProduitParNom',['listeProduit'=>$products]);
 }
 
     public function listeProduitParPrixCroissant(){
-        $products= Product:: orderBy('price')
+        $products= Product::orderBy('price')
             ->get();
         return view('listeProduitParNom',['listeProduit'=>$products]);
     }
 
-    public function infoProduitModel($id){
-        $product=Product::find($id);
-
-        //dd($product);
+    public function infoProduitModel(Product $product){
         return view('infoProduitModel',
             ['produit'=>$product]);
     }

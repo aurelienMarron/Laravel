@@ -6,7 +6,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\BackofficeController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +47,13 @@ Route::get('/listeProduitParNom', [ProductController::class,'listeProduitParNom'
 
 Route::get('/listeProduitParPrixCroissant', [ProductController::class,'listeProduitParPrixCroissant']);
 
-Route::get('/infoProduitModel/{id}', [ProductController::class,'infoProduitModel']);
+Route::get('/infoProduitModel/{product}', [ProductController::class,'infoProduitModel']);
+
+Route::resource('backoffice/indexproduct',BackofficeController::class);
+
+Route::get('/token', function (Request $request) {
+    $token = $request->session()->token();
+
+    $token = csrf_token();
+
+});
