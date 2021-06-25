@@ -33,4 +33,12 @@ public function listeProduitParNom(){
         return view('listeProduitParNom',['listeProduit'=>$products]);
     }
 
+    public function infoProduitModel($id){
+        $product=Product::find($id);
+
+        //dd($product);
+        return view('infoProduitModel',
+            ['produit'=>$product]);
+    }
+
 }

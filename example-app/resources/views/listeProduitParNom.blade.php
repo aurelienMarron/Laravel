@@ -8,7 +8,7 @@
             @foreach($listeProduit as $product)
                 <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
-                        <div><a href="/product/{{$product->id}}">
+                        <div><a href="/infoProduitModel/{{$product->id}}">
                                 <img class="card-img-top" src="{{$product->picture}}" alt="Card image cap">
                             </a></div>
                         <div class="card-body">

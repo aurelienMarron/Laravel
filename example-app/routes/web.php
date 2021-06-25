@@ -44,3 +44,5 @@ Route::get('/product', [ProductController::class,'listeProduit']);
 Route::get('/listeProduitParNom', [ProductController::class,'listeProduitParNom']);
 
 Route::get('/listeProduitParPrixCroissant', [ProductController::class,'listeProduitParPrixCroissant']);
+
+Route::get('/infoProduitModel/{id}', [ProductController::class,'infoProduitModel']);
