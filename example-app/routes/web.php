@@ -51,6 +51,7 @@ Route::get('/infoProduitModel/{product}', [ProductController::class,'infoProduit
 
 Route::resource('backoffice/indexproduct',BackofficeController::class);
 
+
 Route::get('/token', function (Request $request) {
     $token = $request->session()->token();
 

@@ -53,12 +53,13 @@ class BackofficeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Product $product
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        return view('backoffice/showProduct',['produit'=>$product]);
+        $product=Product::find($id);
+        return view('backoffice/showProduct',['product'=>$product]);
     }
 
     /**
