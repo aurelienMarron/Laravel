@@ -10,7 +10,7 @@
             @foreach($listeProduit as $product)
                 <div class="col-md-3">
                     <div class="card" style="width: 18rem;">
-                        <div><a href="/infoProduitModel/{{$product->id}}">
+                        <div><a href="{{route('indexproduct.show', [$product])}}">
                                 <img class="card-img-top" src="{{$product->picture}}" alt="Card image cap">
                             </a></div>
                         <div class="card-body">
@@ -24,8 +24,7 @@
                             <li class="list-group-item">Dispo:{{$product->available}}</li>
                         </ul>
 
-                            <button type="submit" class="btn btn-dark btn-outline-light">Delete</button>
-                            <button type="submit" class="btn btn-dark btn-outline-light">Update</button>
+
                     </div>
                 </div>
 

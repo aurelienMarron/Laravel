@@ -22,6 +22,7 @@
                 </div>
             </div>
         </div>
-        <a href="{{route('indexproduct.create')}}"  class="btn btn-dark btn-outline-light">Update product</a>
+        <a href="{{route('indexproduct.edit',[$product])}}"  class="btn btn-dark btn-outline-light">Update product</a>
+        <a href="{{route('indexproduct.edit',[$product])}}"  class="btn btn-dark btn-outline-light">Update product</a>
     </div>
 @stop

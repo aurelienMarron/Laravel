@@ -70,20 +70,33 @@ class BackofficeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product=Product::find($id);
+        return view('backoffice/updateProduct',['product'=>$product]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param int ud
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $product=Product::find($id);
+        $product ->update(
+            ['name' => $request->input('name'),
+                'price' => $request->input('price'),
+                'weight' => $request->input('weight'),
+                'picture' => $request->input('picture'),
+                'quantity' => $request->input('quantity'),
+                'available' => $request->input('available'),
+                'size'=>$request->input('size'),
+                'categories_id' => $request->input('categories_id')
+            ]);
+        return redirect()->route('indexproduct.show', [$product]);
     }
+
 
     /**
      * Remove the specified resource from storage.
