@@ -19,7 +19,12 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Id: {{$product->id }}</li>
                             <li class="list-group-item">Prix:{{$product->price}}</li>
-                            <li class="list-group-item">Poids:{{$product->weight}}</li>
+                            <li class="list-group-item">Poids:@if($product->weight<1000)
+                                    {{$product->weight}} grammes
+                            @else
+                                    {{$product->weight/1000}} kilo(s)
+                                                                  @endif
+                            </li>
                             <li class="list-group-item">Quantity: {{$product->quantity}}</li>
                             <li class="list-group-item">Dispo:{{$product->available}}</li>
                         </ul>

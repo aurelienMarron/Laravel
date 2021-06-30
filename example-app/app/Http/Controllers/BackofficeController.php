@@ -102,7 +102,7 @@ class BackofficeController extends Controller
         /*$product=Product::find($id);
         $input=$request->all();
         if( $product->isDirty){
-            $product->fill($input)->save($product);
+            $product->fill($input)->save();
         }*/
 
             /*$product->name=$request->input('name');
