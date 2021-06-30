@@ -12,4 +12,12 @@ class Product extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable=['id','name','price','weight','picture','quantity','available','size','categories_id'];
+
+    public function categorie(){
+        return $this->belongsTo(Categorie::class);
+    }
+
+    public function order_product(){
+       return $this->belongsTo(Order_product::class);
+    }
 }

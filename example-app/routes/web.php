@@ -34,7 +34,7 @@ Route::get('/', [HomeController::class,'homePage']);
 Route::get('/product/{id}', [ProductController::class,'infoProduit']);
 
 
-Route::get('/cart',[CartController::class,'cart']);
+Route::get('/cart/{order}',[CartController::class,'cart']);
 
 Route::get('/contact', [contactController::class,'afficheContact']);
 
@@ -52,9 +52,4 @@ Route::get('/infoProduitModel/{product}', [ProductController::class,'infoProduit
 Route::resource('backoffice/indexproduct',BackofficeController::class);
 
 
-Route::get('/token', function (Request $request) {
-    $token = $request->session()->token();
 
-    $token = csrf_token();
-
-});
