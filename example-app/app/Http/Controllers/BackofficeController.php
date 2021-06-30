@@ -138,6 +138,7 @@ class BackofficeController extends Controller
      */
     public function destroy($id)
     {
+        DB::table('order_product')->where('products_id',$id)->delete();
         Product::find($id)->delete();
 
         return redirect()->route('indexproduct.index');
