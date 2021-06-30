@@ -78,13 +78,44 @@ class BackofficeController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int ud
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $product=Product::find($id);
-        $product ->update(
+        $input=$request->all();
+        $product->fill($input)->save();
+
+
+        /*Product::where('id',$id)
+            ->update(['name' => $request->input('name'),
+                'price' => $request->input('price'),
+                'weight' => $request->input('weight'),
+                'picture' => $request->input('picture'),
+                'quantity' => $request->input('quantity'),
+                'available' => $request->input('available'),
+                'size'=>$request->input('size'),
+                'categories_id' => $request->input('categories_id')
+            ]);*/
+
+        /*$product=Product::find($id);
+        $input=$request->all();
+        if( $product->isDirty){
+            $product->fill($input)->save($product);
+        }*/
+
+            /*$product->name=$request->input('name');
+        $product->price=$request->input('price');
+        $product->weight=$request->input('weight');
+        $product->picture=$request->input('picture');
+        $product->quantity=$request->input('quantity');
+        $product->available=$request->input('available');
+        $product->size=$request->input('size');
+        $product->categories_id=$request->input('categories_id');
+        $product->save();*/
+
+       /* $product=Product::update(['id'=>$id],
             ['name' => $request->input('name'),
                 'price' => $request->input('price'),
                 'weight' => $request->input('weight'),
@@ -93,7 +124,8 @@ class BackofficeController extends Controller
                 'available' => $request->input('available'),
                 'size'=>$request->input('size'),
                 'categories_id' => $request->input('categories_id')
-            ]);
+            ]);*/
+
         return redirect()->route('indexproduct.show', [$product]);
     }
 

@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <form method="post" action="{{route('indexproduct.store')}}">
+    <form method="post" action="{{route('indexproduct.update',[$product])}}">
+        @method('PUT')
         @csrf
         <ul><label>
                 <li> <input type="text" name="name" value="{{$product->name}}"></li>
