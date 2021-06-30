@@ -23,6 +23,10 @@
             </div>
         </div>
         <a href="{{route('indexproduct.edit',[$product])}}"  class="btn btn-dark btn-outline-light">Update product</a>
-        <a href="{{route('indexproduct.edit',[$product])}}"  class="btn btn-dark btn-outline-light">Update product</a>
+        <form method="POST" action="{{route('indexproduct.destroy',[$product])}}">
+            @method('DELETE')
+            @csrf
+            <button  type="submit" class="btn btn-dark btn-outline-light">Delete product</button>
+        </form>
     </div>
 @stop
