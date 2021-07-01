@@ -6,7 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EquipeController;
-use App\Http\Controllers\BackofficeController;
+use App\Http\Controllers\BackofficeProductController;
+use App\Http\Controllers\BackofficeCategorieController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -49,7 +50,9 @@ Route::get('/listeProduitParPrixCroissant', [ProductController::class,'listeProd
 
 Route::get('/infoProduitModel/{product}', [ProductController::class,'infoProduitModel']);
 
-Route::resource('backoffice/indexproduct',BackofficeController::class);
+Route::resource('backoffice/indexproduct',BackofficeProductController::class);
+
+Route::resource('backoffice/indexcategorie',BackofficeCategorieController::class);
 
 
 

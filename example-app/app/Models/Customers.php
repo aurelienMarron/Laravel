@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Customers extends Model
 {
     use HasFactory;
-    protected $table = 'categories';
+    protected $table = 'customers';
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable=['id','last_name','first_name','email','address','postcode','city'];
