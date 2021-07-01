@@ -20,10 +20,7 @@
                         <li class="list-group-item">Categorie id:{{$product->categories_id}}</li>
                         <div> <ul><h4 class="card-title">Produit de la même catégorie</h4>
 
-                                @foreach($product->categorie as $products)
-                                    <li class="list-group-item"> {{$product->name}}</li>
 
-                                @endforeach
                             </ul></div>
                     </ul>
                 </div>
