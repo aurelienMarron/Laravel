@@ -34,7 +34,7 @@ Route::get('/', [HomeController::class,'homePage']);
 Route::get('/product/{id}', [ProductController::class,'infoProduit']);
 
 
-Route::get('/cart/{order}',[CartController::class,'cart']);
+Route::get('/ListeCommande',[CartController::class,'cart']);
 
 Route::get('/contact', [contactController::class,'afficheContact']);
 

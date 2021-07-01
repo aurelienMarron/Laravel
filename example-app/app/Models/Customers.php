@@ -14,9 +14,8 @@ class Customers extends Model
     protected $fillable=['id','last_name','first_name','email','address','postcode','city'];
 
     public function orders(){
-        return $this->hasMany(Orders::class);
+        return $this->hasMany(Order::class);
     }
 
-    public function order_product(){
-        return $this->hasOne(Order_product::class);}
+
 }

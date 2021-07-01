@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Orders extends Model
+class Order extends Model
 {
     use HasFactory;
-    protected $table = 'categories';
+    protected $table = 'orders';
     protected $primaryKey = 'id';
     //public $timestamps = false;
     protected $fillable=['id','date','number','customer_id'];
@@ -17,7 +17,8 @@ class Orders extends Model
         return $this->belongsTo(Customers::class);
     }
 
-    public function order_product(){
-        return $this->hasOne(Order_product::class);
+    public function products(){
+        return $this->belongsToMany(Product::class)->withPivot('quantity');
     }
+
 }
