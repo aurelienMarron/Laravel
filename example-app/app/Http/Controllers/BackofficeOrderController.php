@@ -43,6 +43,7 @@ class BackofficeOrderController extends Controller
             ['number' => $request->input('number'),
                 'customer_id' => $request->input('customer_id'),
                 'date'=>$request->input('date')
+
             ]);
         return redirect()->route('indexorder.show', [$order]);
     }

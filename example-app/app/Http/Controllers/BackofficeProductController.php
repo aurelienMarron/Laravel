@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use Validator;
 
 
 class BackofficeProductController extends Controller
@@ -39,6 +40,11 @@ class BackofficeProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'required|unique:products',
+            'price'=>'numeric|min:0'
+        ]);
+
         $product = Product::create(
             ['name' => $request->input('name'),
             'price' => $request->input('price'),
@@ -47,7 +53,7 @@ class BackofficeProductController extends Controller
             'quantity' => $request->input('quantity'),
             'available' => $request->input('available'),
             'size'=>$request->input('size'),
-            'categories_name' => $request->input('categories_name')
+            'categorie_id' => $request->input('categorie_id')
         ]);
         return redirect()->route('indexproduct.show', [$product]);
     }
