@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 
+
 class BackofficeProductController extends Controller
 {
     /**
@@ -26,6 +27,7 @@ class BackofficeProductController extends Controller
      */
     public function create()
     {
+
         return view('backoffice/createProduct');
     }
 
@@ -45,7 +47,7 @@ class BackofficeProductController extends Controller
             'quantity' => $request->input('quantity'),
             'available' => $request->input('available'),
             'size'=>$request->input('size'),
-            'categories_id' => $request->input('categories_id')
+            'categories_name' => $request->input('categories_name')
         ]);
         return redirect()->route('indexproduct.show', [$product]);
     }

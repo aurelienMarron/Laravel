@@ -17,10 +17,7 @@
                         <li class="list-group-item">Quantity: {{$product->quantity}}</li>
                         <li class="list-group-item">Dispo:{{$product->available}}</li>
                         <li class="list-group-item">Taille:{{$product->size}}</li>
-                        <li class="list-group-item">Categorie id:{{$product->categories_id}}</li>
-                        <div> <ul><h4 class="card-title">Produit de la même catégorie</h4>
-
-
+                        <li class="list-group-item">Categorie: {{$product->categorie->name}}</li>
                             </ul></div>
                     </ul>
                 </div>

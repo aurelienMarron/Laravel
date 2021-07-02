@@ -8,6 +8,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\BackofficeProductController;
 use App\Http\Controllers\BackofficeCategorieController;
+use App\Http\Controllers\BackofficeOrderController;
+use App\Http\Controllers\BackofficeCustomerController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -54,5 +56,6 @@ Route::resource('backoffice/indexproduct',BackofficeProductController::class);
 
 Route::resource('backoffice/indexcategorie',BackofficeCategorieController::class);
 
+Route::resource('backoffice/indexorder',BackofficeOrderController::class);
 
-
+Route::resource('backoffice/indexcustomer',BackofficeCustomerController::class);
