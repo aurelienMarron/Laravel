@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Categorie;
 use Validator;
 
 
@@ -28,8 +29,8 @@ class BackofficeProductController extends Controller
      */
     public function create()
     {
-
-        return view('backoffice/createProduct');
+        $categories=Categorie::all();
+        return view('backoffice/createProduct',['categories'=>$categories]);
     }
 
     /**
@@ -53,7 +54,7 @@ class BackofficeProductController extends Controller
             'quantity' => $request->input('quantity'),
             'available' => $request->input('available'),
             'size'=>$request->input('size'),
-            'categorie_id' => $request->input('categorie_id')
+            'categorie_id' => $request->input('categorie')
         ]);
         return redirect()->route('indexproduct.show', [$product]);
     }
