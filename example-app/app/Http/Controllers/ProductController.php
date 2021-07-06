@@ -35,7 +35,7 @@ public function listeProduitParNom(){
 
     public function infoProduitModel(Product $product){
         return view('infoProduitModel',
-            ['produit'=>$product]);
+            ['product'=>$product]);
     }
 
 }

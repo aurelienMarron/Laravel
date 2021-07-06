@@ -37,7 +37,7 @@ Route::get('/', [HomeController::class,'homePage']);
 Route::get('/product/{id}', [ProductController::class,'infoProduit']);
 
 
-Route::get('/ListeCommande',[CartController::class,'cart']);
+Route::get('/cart',[CartController::class,'cart'])->name('panier');
 
 Route::get('/contact', [contactController::class,'afficheContact']);
 
@@ -50,7 +50,7 @@ Route::get('/listeProduitParNom', [ProductController::class,'listeProduitParNom'
 
 Route::get('/listeProduitParPrixCroissant', [ProductController::class,'listeProduitParPrixCroissant']);
 
-Route::get('/infoProduitModel/{product}', [ProductController::class,'infoProduitModel']);
+Route::get('/infoProduitModel/{product}', [ProductController::class,'infoProduitModel'])->name('product_show');
 
 Route::resource('backoffice/indexproduct',BackofficeProductController::class);
 
@@ -59,3 +59,5 @@ Route::resource('backoffice/indexcategorie',BackofficeCategorieController::class
 Route::resource('backoffice/indexorder',BackofficeOrderController::class);
 
 Route::resource('backoffice/indexcustomer',BackofficeCustomerController::class);
+
+Route::get('/cart/{product}',[CartController::class,'add'])->name('cart.add');

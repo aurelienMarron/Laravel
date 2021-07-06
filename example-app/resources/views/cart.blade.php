@@ -7,15 +7,14 @@
             <div class="col-md-3">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{$order->id}}</h5>
+                        <h5 class="card-title">Panier</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Id de la commande:{{$order->id}}</li>
-                        @foreach($order->products as $product)
-                        <li class="list-group-item">Nom du produit:{{$product->name}}</li>
-                            <li class="list-group-item">Quantité:{{$product->pivot->quantity}}</li>
+                            @foreach ($data as $key => $value)
+                                <li>{{ $value['produit']->name }}</li>
+                                        <li>{{ $value['quantity'] }}</li>
+                                <li>Total Commande:{{$value['quantity']*$value['produit']->price}}</li>
                             @endforeach
-
                     </ul>
                 </div>
             </div>
