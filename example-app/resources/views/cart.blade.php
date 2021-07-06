@@ -11,12 +11,14 @@
                     </div>
                     <ul class="list-group list-group-flush">
                             @foreach ($data as $key => $value)
-                                <li>{{ $value['produit']->name }}</li>
-                                        <li>{{ $value['quantity'] }}</li>
-                                <li>Total Commande:{{$value['quantity']*$value['produit']->price}}</li>
+                                <li>Nom du produit: {{ $value['produit']->name }}</li>
+                                        <li>Quantité commandé: {{ $value['quantity'] }}</li>
+                                <li>Total pour ce produit:{{$value['total']}}</li>
                             @endforeach
+                        <li>Total Commande: {{$total}}</li>
                     </ul>
                 </div>
+                <button  type="submit" class="btn btn-dark btn-outline-light">Passer la commande</button>
             </div>
         </div>
     </div>

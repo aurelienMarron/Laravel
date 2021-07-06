@@ -12,13 +12,16 @@ class CartController extends Controller
         $data = [];
 
         $i=0;
+        $total=0;
         foreach ($session as $product_id => $quantity){
             $data [$i]['produit'] = Product::find($product_id);
             $data [$i]['quantity'] = $quantity;
+            $data[$i]['total']=$data[$i]['produit']->price*$data [$i]['quantity'];
+            $total+=$data[$i]['total'];
             $i++;
         }
 
-        return view('/cart', ['data' => $data]);
+        return view('/cart', ['data' => $data,'total'=>$total]);
     }
 
     public function add(Product $product, Request $request){
