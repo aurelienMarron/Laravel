@@ -1,7 +1,6 @@
 @extends('layout')
 
 @section('content')
-
     <h1>Catalogue</h1>
     <div class="container">
         <div class="row">
